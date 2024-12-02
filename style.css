@@ -1,94 +1,101 @@
+/* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Body Styling */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
 }
 
+/* Card Container */
 .card-container {
-    perspective: 1500px;
+  width: 500px;
+  height: 600px;
+  perspective: 1000px; /* Enable 3D effect */
 }
 
 .card {
-    width: 320px;
-    height: 200px;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.8s ease, box-shadow 0.4s ease;
-    cursor: pointer;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
 }
 
-.card:hover {
-    transform: scale(1.05) rotateY(10deg) rotateX(5deg);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-}
-
-.card-face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    backface-visibility: hidden;
-    border-radius: 15px;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.card-front {
-    background: linear-gradient(135deg, #4CAF50, #2E7D32);
-    color: white;
-}
-
+/* Front and Back Faces */
+.card-front,
 .card-back {
-    background: linear-gradient(135deg, #FF5722, #BF360C);
-    color: white;
-    transform: rotateY(180deg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide the back side when not visible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.card.flipped {
-    transform: rotateY(180deg);
+/* Front Face */
+.card-front {
+  background: white;
 }
 
-h1 {
-    font-size: 2em;
-    font-weight: 600;
+.front-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-p {
-    font-size: 1em;
-    margin-top: 10px;
+
+/* Card Back Styling */
+.card-back {
+  background: #fff;
+  transform: rotateY(180deg); /* Rotate for flip effect */
+  display: flex; /* Use Flexbox */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  padding: 20px;
+  text-align: center; /* Center text alignment */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.contact-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1em;
-    font-weight: 600;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    background: linear-gradient(45deg, #ff6b6b, #f06595);
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.5);
-    transition: all 0.3s ease;
+/* Name Section */
+.card-back .name h1 {
+  font-size: 30px;
+  color: #b700ff;
+  margin-bottom: 10px; /* Space below the heading */
 }
 
-.contact-btn:hover {
-    background: linear-gradient(45deg, #f06595, #ff6b6b);
-    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.8);
-    transform: scale(1.1);
+/* Description Section */
+.card-back .description p {
+  font-size: 20px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* 여기 추가함 */
+.back-image {
+  width: 30%;
+  height: auto;
+   max-width: 300px;
+   max-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 10px auto;
+}
+
+/* Flip Effect */
+.card-container.clicked .card {
+  transform: rotateY(180deg);
 }

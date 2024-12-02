@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Card</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flip Card</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="card-container">
-        <div class="card" onclick="flipCard()">
-            <div class="card-face card-front">
-                <h1>Your Name</h1>
-                <p>Email: your.email@example.com</p>
-            </div>
-            <div class="card-face card-back">
-                <p>Your One-Line Introduction</p>
-                <a href="mailto:your.email@example.com" class="contact-btn">Get in Touch</a>
-            </div>
+  <div class="card-container">
+    <div class="card">
+      <!-- Front Side -->
+      <div class="card-front">
+        <img src="Umin.png" alt="Front Image" class="front-image">
+      </div>
+      <!-- Back Side -->
+      <div class="card-back">
+        <img src="Umin_sign.png" alt="Back Image" class="back-image">
+        <div class="content">
+          <div class="name">
+            <h1>Introduction</h1>
+          </div>
+          <div class="description">
+            <p>집에서 편하고 안전하게 지내는것</p>
+            <p>그것을 저는 목표로합니다.</p>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
     <script src="script.js"></script>
 </body>
 </html>
